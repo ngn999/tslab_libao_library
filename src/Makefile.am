@@ -17,7 +17,7 @@ wmm=
 endif
 
 libao_la_SOURCES = audio_out.c config.c ao_null.c ao_wav.c ao_au.c ao_raw.c ao_aixs.c ao_alsa.c $(wmm)
-libao_la_LDFLAGS = @LIBAO_LA_LDFLAGS@ -version-info @LIB_CURRENT@:@LIB_REVISION@:@LIB_AGE@
+libao_la_LDFLAGS = -lasound @LIBAO_LA_LDFLAGS@ -version-info @LIB_CURRENT@:@LIB_REVISION@:@LIB_AGE@
 if HAVE_LD_VERSION_SCRIPT
   libao_la_LDFLAGS += -Wl,--version-script=$(top_srcdir)/src/ao.vers
 endif
