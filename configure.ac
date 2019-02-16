@@ -247,7 +247,7 @@ AC_MSG_RESULT([no])
 LIBS="$waveout_old_LIBS"
 ])
 ],[],[#include <windows.h>])])
-AM_CONDITIONAL([HAVE_WMM],[test "x$have_wmm" = "xyes"])
+AM_CONDITIONAL([HAVE_WMM],[test "x$have_wmm" = "xyes"])asdf
 AS_IF([test "x${have_wmm}" = "xyes"],[WMM_LIBS="-lwinmm"],[WMM_LIBS=""])
 AC_SUBST([WMM_LIBS])
 

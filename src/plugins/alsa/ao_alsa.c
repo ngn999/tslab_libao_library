@@ -904,3 +904,13 @@ void ao_plugin_device_clear(ao_device *device)
           awarn("ao_plugin_device_clear called with uninitialized ao_device\n");
 }
 
+ao_functions ao_alsa = {
+    ao_plugin_test,
+    ao_plugin_driver_info,
+    ao_plugin_device_init,
+    ao_plugin_set_option,
+    ao_plugin_open,
+    ao_plugin_play,
+    ao_plugin_close,
+    ao_plugin_device_clear
+};
