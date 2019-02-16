@@ -86,18 +86,24 @@ extern ao_functions ao_aixs;
 #ifdef HAVE_WMM
 extern ao_functions ao_wmm;
 #endif
+#ifdef HAVE_ALSA_STATIC
+extern ao_functions ao_alsa;
+#endif
 static ao_functions *static_drivers[] = {
 	&ao_null, /* Must have at least one static driver! */
 	&ao_wav,
 	&ao_raw,
 	&ao_au,
-	&ao_alsa,
 #ifdef HAVE_SYS_AUDIO_H
 	&ao_aixs,
 #endif
 #ifdef HAVE_WMM
 	&ao_wmm,
 #endif
+#ifdef HAVE_ALSA_STATIC
+	&ao_alsa,
+#endif
+
 	NULL /* End of list */
 };
 

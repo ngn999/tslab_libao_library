@@ -247,7 +247,7 @@ AC_MSG_RESULT([no])
 LIBS="$waveout_old_LIBS"
 ])
 ],[],[#include <windows.h>])])
-AM_CONDITIONAL([HAVE_WMM],[test "x$have_wmm" = "xyes"])asdf
+AM_CONDITIONAL([HAVE_WMM],[test "x$have_wmm" = "xyes"])
 AS_IF([test "x${have_wmm}" = "xyes"],[WMM_LIBS="-lwinmm"],[WMM_LIBS=""])
 AC_SUBST([WMM_LIBS])
 
@@ -278,6 +278,9 @@ AC_ARG_ENABLE(alsa, [  --enable-alsa         include alsa 0.9/1.0 output plugin 
 AC_ARG_ENABLE(alsa-mmap,
    [  --enable-alsa-mmap          use mmio with alsa ],
    [ BUILD_ALSAMMIO="$enableval" ],[ BUILD_ALSAMMIO="no" ])
+AC_ARG_ENABLE(alsa-static,
+  [  --enable-alsa-static        generate version with the alsa driver built-in ],
+  [ BUILD_ALSA_STATIC="$enableval" ],[ BUILD_ALSA_STATIC="no" ])
 
 if test "$BUILD_ALSA" = "yes"; then
    AC_CHECK_LIB(asound, snd_pcm_open, have_alsa=yes, have_alsa=no)
@@ -293,6 +296,9 @@ if test "x$have_alsa" = xyes; then
 	if test "x$have_alsammio" = xyes; then
 		AC_DEFINE(USE_ALSA_MMIO)
 	fi
+	if test "x$have_alsa_static" = xyes; then
+    	AC_DEFINE(HAVE_ALSA_STATIC)
+    fi
 else
 	ALSA_LIBS=""
 fi

@@ -904,6 +904,8 @@ void ao_plugin_device_clear(ao_device *device)
           awarn("ao_plugin_device_clear called with uninitialized ao_device\n");
 }
 
+#ifdef HAVE_ALSA_STATIC
+
 ao_functions ao_alsa = {
     ao_plugin_test,
     ao_plugin_driver_info,
@@ -914,3 +916,5 @@ ao_functions ao_alsa = {
     ao_plugin_close,
     ao_plugin_device_clear
 };
+
+#endif
