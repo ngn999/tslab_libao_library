@@ -280,7 +280,7 @@ AC_ARG_ENABLE(alsa-mmap,
    [ BUILD_ALSAMMIO="$enableval" ],[ BUILD_ALSAMMIO="no" ])
 AC_ARG_ENABLE(alsa-static,
   [  --enable-alsa-static        generate version with the alsa driver built-in ],
-  [ BUILD_ALSA_STATIC="$enableval" ],[ BUILD_ALSA_STATIC="no" ])
+  [ have_alsa_static=yes, have_alsa_static=no)
 
 if test "$BUILD_ALSA" = "yes"; then
    AC_CHECK_LIB(asound, snd_pcm_open, have_alsa=yes, have_alsa=no)
