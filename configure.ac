@@ -291,13 +291,14 @@ if test "$BUILD_ALSA" = "yes"; then
 
 fi
 
+AM_CONDITIONAL([HAVE_ALSA_STATIC],[test "x$have_alsa_static" = "xyes"])
+
 if test "x$have_alsa" = xyes; then
 	ALSA_LIBS="-lasound"
 	if test "x$have_alsammio" = xyes; then
 		AC_DEFINE(USE_ALSA_MMIO)
 	fi
 	if test "x$have_alsa_static" = xyes; then
-	    AM_CONDITIONAL([HAVE_ALSA_STATIC],[1])
     	AC_DEFINE(HAVE_ALSA_STATIC)
     fi
 else
