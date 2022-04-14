@@ -749,3 +749,13 @@ void ao_plugin_device_clear(ao_device *device)
   device->internal=NULL;
 }
 
+ao_functions ao_macosx = {
+    ao_plugin_test,
+    ao_plugin_driver_info,
+    ao_plugin_device_init,
+    ao_plugin_set_option,
+    ao_plugin_open,
+    ao_plugin_play,
+    ao_plugin_close,
+    ao_plugin_device_clear
+};

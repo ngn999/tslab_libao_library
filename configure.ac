@@ -423,7 +423,6 @@ case $host in
 esac
 AM_CONDITIONAL(HAVE_MACOSX,test "x$have_macosx" = xyes)
 
-
 dnl Check for NAS
 
 AC_ARG_ENABLE(nas, [  --enable-nas            include NAS output plugin ],
@@ -474,7 +473,7 @@ dnl Plugins get special LDFLAGS
 AC_SUBST(PLUGIN_LDFLAGS)
 
 
-AC_OUTPUT([Makefile src/Makefile doc/Makefile include/Makefile include/ao/Makefile include/ao/os_types.h src/plugins/Makefile src/plugins/esd/Makefile src/plugins/oss/Makefile src/plugins/alsa/Makefile src/plugins/sun/Makefile src/plugins/irix/Makefile src/plugins/arts/Makefile src/plugins/macosx/Makefile src/plugins/nas/Makefile src/plugins/pulse/Makefile src/plugins/sndio/Makefile src/plugins/roar/Makefile ao.pc])
+AC_OUTPUT([Makefile src/Makefile doc/Makefile include/Makefile include/ao/Makefile include/ao/os_types.h src/plugins/Makefile src/plugins/esd/Makefile src/plugins/oss/Makefile src/plugins/alsa/Makefile src/plugins/sun/Makefile src/plugins/irix/Makefile src/plugins/arts/Makefile src/plugins/nas/Makefile src/plugins/pulse/Makefile src/plugins/sndio/Makefile src/plugins/roar/Makefile ao.pc])
 
 AS_AC_EXPAND(LIBDIR, ${libdir})
 AS_AC_EXPAND(INCLUDEDIR, ${includedir})
