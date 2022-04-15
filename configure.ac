@@ -417,11 +417,14 @@ AM_CONDITIONAL(HAVE_IRIX,test "x$have_irix" = xyes)
 dnl Check for MacOS X
 case $host in
        *-darwin*)
-               have_macosx=yes;;
+               have_macosx=yes
+               AC_DEFINE([HAVE_MACOSX],[1], [build macosx as built-in])
+               ;;
        *)
                have_macosx=no;;
 esac
 AM_CONDITIONAL(HAVE_MACOSX,test "x$have_macosx" = xyes)
+
 
 dnl Check for NAS
 
